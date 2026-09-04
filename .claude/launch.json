@@ -1,0 +1,15 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "site",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-c",
+        "import os,functools,http.server,socketserver;p=int(os.environ.get('PORT','5050'));socketserver.TCPServer.allow_reuse_address=True;H=functools.partial(http.server.SimpleHTTPRequestHandler,directory=os.getcwd());httpd=socketserver.TCPServer(('0.0.0.0',p),H);print('Serving HTTP on 0.0.0.0 port %d'%p,flush=True);httpd.serve_forever()"
+      ],
+      "port": 5050,
+      "autoPort": true
+    }
+  ]
+}
